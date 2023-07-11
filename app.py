@@ -19,16 +19,10 @@ This chatbot has been meticulously trained on a vast array of medical knowledge,
     st.write('Made with by [Alex Mirugwe](<https://www.mirugwe.com/>)')
 
 
-if 'generated' not in st.session_state:
-    st.session_state['generated'] = ["I'm Ask me anything, How may I help you?"]
-
-if 'past' not in st.session_state:
-    st.session_state['past'] = ['Hi!']
-
 st.title('⚕️🔗 Healthcare Chatbot')
 
 input_container = st.container()
-colored_header(label='', description='', color_name='blue-30')
+colored_header(label='', description='', color_name='red-70')
 response_container = st.container()
 
 
@@ -47,13 +41,3 @@ def generate_response(prompt):
     return response
 
 
-with response_container:
-    if user_input:
-        response = generate_response(user_input)
-        st.session_state.past.append(user_input)
-        st.session_state.generated.append(response)
-        
-    if st.session_state['generated']:
-        for i in range(len(st.session_state['generated'])):
-            message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
-            message(st.session_state['generated'][i], key=str(i))
