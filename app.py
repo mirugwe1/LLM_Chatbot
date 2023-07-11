@@ -4,6 +4,8 @@ from streamlit_extras.colored_header import colored_header
 from streamlit_extras.add_vertical_space import add_vertical_space
 from hugchat import hugchat
 
+
+
 st.set_page_config(page_title="Healthcare Chatbot powered by LLM")
 
 with st.sidebar:
@@ -23,17 +25,18 @@ if 'generated' not in st.session_state:
 if 'past' not in st.session_state:
     st.session_state['past'] = ['Hi!']
 
+st.title('⚕️🔗 Healthcare Chatbot')
 
 input_container = st.container()
 colored_header(label='', description='', color_name='blue-30')
 response_container = st.container()
 
 
+
 def get_text():
     input_text = st.text_input("What would you like to know: ", "", key="input")
     return input_text
 
-## Applying the user input box
 with input_container:
     user_input = get_text()
 
