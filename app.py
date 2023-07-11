@@ -19,7 +19,7 @@ This chatbot has been meticulously trained on a vast array of medical knowledge,
     st.write('Made with by [Alex Mirugwe](<https://www.mirugwe.com/>)')
 
 
-st.title('⚕️🔗 Healthcare Chatbot')
+st.title('⚕️🔗 Healthcare Chatbot 🩺')
 
 input_container = st.container()
 colored_header(label='', description='', color_name='red-70')
